@@ -1,28 +1,36 @@
 #!/usr/bin/env python3
+"""Task 2: LIFO Caching.
 """
-LIFO caching
-"""
+from collections import OrderedDict
+
 from base_caching import BaseCaching
 
 
 class LIFOCache(BaseCaching):
-    """LIFO Caching"""
+    """Represents an object that allows storing and
+    retrieving items from a dictionary with a LIFO
+    removal mechanism when the limit is reached.
+    """
     def __init__(self):
+        """Initializes the cache.
+        """
         super().__init__()
+        self.cache_data = OrderedDict()
 
     def put(self, key, item):
-        """Put an item with key of key"""
+        """Adds an item in the cache.
+        """
         if key is None or item is None:
             return
-        if key and item:
-            self.cache_data[key] = item
-            if len(self.cache_data) > self.MAX_ITEMS:
-                last = list(self.cache_data.keys())[-1]
-                print("DISCARD: {}".format(last))
-                del self.cache_data[last]
+        if key not in self.cache_data:
+            if len(self.cache_data) + 1 > BaseCaching.MAX_ITEMS:
+                if self.cache_data:
+                    last_key, _ = self.cache_data.popitem(True)
+                    print("DISCARD:", last_key)
+        self.cache_data[key] = item
+        self.cache_data.move_to_end(key, last=True)
 
     def get(self, key):
-        """Get an item with key of key"""
-        if key is None or self.cache_data.get(key) is None:
-            return None
-        return self.cache_data.get(key)
+        """Retrieves an item by key.
+        """
+        return self.cache_data.get(key, None)
