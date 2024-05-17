@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from flask import Flask, render_template
 from flask_babel import Babel
 
@@ -5,8 +6,15 @@ from flask_babel import Babel
 app = Flask(__name__)
 
 
-# Configuration class
 class Config:
+    """
+    Configuration class for the application.
+
+    Attributes:
+        LANGUAGES (list): List of supported languages for the application.
+        BABEL_DEFAULT_LOCALE (str): Default locale for the application.
+        BABEL_DEFAULT_TIMEZONE (str): Default timezone for the application.
+    """
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
