@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Basic Bable setup"""
 from flask import Flask, render_template
 from flask_babel import Babel
 
@@ -29,7 +30,7 @@ babel = Babel(app)
 
 
 @app.route('/')
-def index():
+def index() -> str:
     """
     Renders the index.html template.
 
