@@ -1,0 +1,33 @@
+// ignore files
+
+/ node_modules / 
+ / dist / 
+ / build / 
+ / coverage / 
+ / .vscode / 
+ / .idea / 
+ / .DS_Store / 
+ / .env / 
+ / .env.local / 
+ / .env.development / 
+ / .env.test / 
+ / .env.production / 
+ / .cache / 
+ / .eslintcache / 
+ / .parcel-cache / 
+ / .yarn / 
+ / .pnp.js / 
+ / .pnp.cjs / 
+ / .pnp / 
+ / .yarn-integrity / 
+ / .yarn-metadata / 
+ / .yarn-tarball / 
+ / .yarn-build / 
+ / .yarnrc / 
+ / .yarnrc.yml / 
+ / yarn.lock / 
+ / package-lock.json / 
+ / yarn-error.log / 
+ / yarn-debug.log / 
+ / npm-debug.log / 
+ / .npm
