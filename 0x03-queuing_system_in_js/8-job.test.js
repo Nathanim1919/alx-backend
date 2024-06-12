@@ -1,4 +1,3 @@
-#!/usr/bin/yarn test
 import sinon from 'sinon';
 import { expect } from 'chai';
 import { createQueue } from 'kue';
